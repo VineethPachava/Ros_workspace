@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/kpit/ros_workspace/devel/include",
+        "/opt/ros/melodic/include",
+        "/home/kpit/ros_workspace/src/custom_kpit/include",
+        "/usr/include"
+      ],
+      "name": "Linux"
+    }
+  ]
+}

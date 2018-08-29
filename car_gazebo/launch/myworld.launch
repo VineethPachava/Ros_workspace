@@ -1,0 +1,38 @@
+<launch>
+  <arg name="robot_namespace" default="/roadstar"/>
+  <arg name="model" default="$(find car_description)/urdf/roadstar.urdf"/>
+  <param name="robot_description" textfile="$(arg model)"/>
+    <arg name="rvizconfig" default="$(find car_gazebo)/rviz/roadstar.rviz" />
+
+  <!-- <param name="robot_description"	 command="$(find xacro)/xacro.py '$(find car_description)/urdf/roadstar.urdf'" /> -->
+  
+  
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+  <arg name="verbose" value="true"/>
+    <arg name="world_name" value="$(find car_gazebo)/worlds/myworld.world"/>
+    <!-- more default parameters can be changed here -->
+  </include>
+
+<!-- <node pkg="car_gazebo" type="joystick_translator" name="joystick_translator"/> -->
+
+<!-- <remap from="/base_scan" to="/sensor_msgs/LaserScan"/> -->
+   
+<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" >
+    <!-- <remap from="robot_description" to="different_robot_description" /> -->
+    <!-- <remap from="joint_states" to="/prius/joint_states" /> -->
+  </node>
+  <!-- <node pkg="fake_localization" type="fake_localization" name="fake_localization"> -->
+    <!-- <remap from="base_pose_ground_truth" to="/prius/base_pose_ground_truth"/> -->
+  <!-- </node> -->
+  <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="very_inaccurate_odom" args="0 0 0 0 0 0 odom base_link"/> -->
+  
+  
+<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 116 -y -37 -z 6 -model roadstar"/>
+
+<!-- <node pkg="turtlesim" type="turtle_teleop_key" name="turtle_teleop_key">
+  <remap from="/turtle1/cmd_vel" to="/cmd_vel"/> 
+  </node>  -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+</launch>

@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/kpit/ros_workspace/devel/include",
+        "/opt/ros/melodic/include",
+        "/home/kpit/ros_workspace/src/car_description/include",
+        "/home/kpit/ros_workspace/src/car_gazebo/include",
+        "/home/kpit/ros_workspace/src/custom_kpit/include",
+        "/home/kpit/ros_workspace/src/learning_tf/include",
+        "/home/kpit/ros_workspace/src/learning_tf2/include",
+        "/usr/include"
+      ],
+      "name": "Linux"
+    }
+  ]
+}
