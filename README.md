@@ -41,6 +41,7 @@ The following things will be opened.
 ### Instructions to control the car
 - Click on the gazebo window.
 - Use "w" key to move the car forward.
+- USe "a" and "d" for turning.
 - Use "s" key to move backward
 - Press "q" or "e" to break.
 
